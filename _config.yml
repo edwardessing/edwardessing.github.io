@@ -8,9 +8,9 @@
 # Site settings
 title: edward essing - art
 email: edwardessing@gmail.com
-description: 'edward essing - art'
-baseurl: ''
-url: 'http://edwardessing.com' # the base hostname & protocol for your site
+description: "edward essing - art"
+baseurl: ""
+url: "https://edwardessing.com" # the base hostname & protocol for your site
 
 plugins:
   - jekyll-sitemap
@@ -24,9 +24,10 @@ social:
 markdown: kramdown
 
 # Server Config options
-livereload: true     # You no longer need to include --livereload:
-                     # jekyll serve -L
-reload_port: 5678    # If you don't want to use the default port
+livereload:
+  true # You no longer need to include --livereload:
+  # jekyll serve -L
+reload_port: 5678 # If you don't want to use the default port
 
 # Sass
 sass:
@@ -35,35 +36,35 @@ sass:
 # Defaults
 defaults:
   - scope:
-      path: ''
+      path: ""
       type: posts
     values:
       layout: post
-      categories: ''
+      categories: ""
       tags: []
-      featured-image: ''
+      featured-image: ""
   - scope:
-      path: ''
+      path: ""
       type: pages
     values:
       layout: page
-      featured-image: ''
+      featured-image: ""
   - scope:
-      path: ''
+      path: ""
       type: galleries
     values:
       layout: gallery
       tags: []
-      featured-image: ''
-      homepage-thumbnail: ''
+      featured-image: ""
+      homepage-thumbnail: ""
   - scope:
-      path: ''
+      path: ""
       type: notes
     values:
       layout: note
       tags: []
-      featured-image: ''
-      homepage-thumbnail: ''
+      featured-image: ""
+      homepage-thumbnail: ""
 
 show_excerpts: true
 
