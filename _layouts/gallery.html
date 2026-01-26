@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class='container'>
+<!-- <div class='container'>
 
 	<h1>{{ page.title }}</h1>
 	{% for category in site.data.categories %}
@@ -20,4 +20,36 @@ layout: default
 
 
 </div>
-	{% include pagination.html %}
+	{% include pagination.html %} -->
+
+<!---->
+
+<div class='row gallery' style='margin-bottom:40px;'>
+		<div class='col-xs-12'>
+			<h1>{{ page.title }}</h1>
+		</div>
+
+		{% for image in site.static_files %}
+			{% if image.path contains page.title %}
+				{% assign new_var = gallery.title | append: '/' | append: category.name %}
+				{% if image.path contains new_var %}
+					<a class='col-xs-12 col-sm-3 img' href='{{ site.baseurl }}{{ image.path }}'>
+						{% assign name = image.name | remove: image.extname %}
+						<img class='img-responsive img-thumb' src='{{ site.baseurl }}{{ image.path }}' alt='{{ name }}' title='{{ name }} - edward essing'>
+					</a>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+
+		<!-- {% include gallery.html %} -->
+
+		{% assign galleries = site.galleries | sort: 'title' | reverse %}
+		{% for gallery in galleries limit:1 %}
+		<div class='col-xs-12'>
+			<a href='/galleries/{{ gallery.title }}'>
+				<hr>
+				<h2>View more</h2>
+			</a>
+		</div>
+		{% endfor %}
+	</div>
