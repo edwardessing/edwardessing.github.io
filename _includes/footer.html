@@ -2,8 +2,7 @@
 	<!-- ARCHIVE -->
 	<div class='archive' style='display:inline-block;'>
 		<br>
-		<h2>Archive</h2>
-		{% assign galleries = site.galleries | sort: 'title' | reverse %}
+		{% assign galleries = site.galleries | sort: 'title' %}
 		{% for gallery in galleries %}
 		<a href="{{ gallery.url | prepend:site.baseurl | prepend:site.url }}">
 			<h3>{{ gallery.title }}</h3>

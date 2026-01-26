@@ -13,10 +13,18 @@ support: [jquery, gallery]
 					<div class='col-xs-12 col-sm-4' style='margin:10px auto;')>
 						<a href='/'>Edward Essing &mdash; Art</a>
 					</div>
-					{% assign galleries = site.galleries | sort: 'title' %}
+					<!-- {% assign galleries = site.galleries | sort: 'title' %}
 		{% for gallery in galleries limit:5 %}
 			<div class='col-xs-12 col-sm-2' style='margin:10px auto; text-align:center;'>
 			<a href='/galleries/{{ gallery.title }}'>{{ gallery.title }}</a>
+		</div>
+		{% endfor %} -->
+				{% assign galleries = site.galleries | sort: 'title' %}
+		{% for gallery in galleries %}
+		<div class='col-xs-12 col-sm-2' style='margin:10px auto; text-align:center;'>
+			<a href="{{ gallery.url | prepend:site.baseurl | prepend:site.url }}">
+				<h3>{{ gallery.title }}</h3>
+			</a>
 		</div>
 		{% endfor %}
 					<!-- <div class='col-xs-12 col-sm-2' style='margin:10px auto; text-align:center;'>
