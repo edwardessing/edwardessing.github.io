@@ -22,9 +22,7 @@ support: [jquery, gallery]
 				{% assign galleries = site.galleries | sort: 'title' %}
 		{% for gallery in galleries %}
 		<div class='col-xs-12 col-sm-2' style='margin:10px auto; text-align:center;'>
-			<a href="{{ gallery.url | prepend:site.baseurl | prepend:site.url }}">
-				<h3>{{ gallery.title }}</h3>
-			</a>
+			<a href="{{ gallery.url | prepend:site.baseurl | prepend:site.url }}">{{ gallery.title }}</a>
 		</div>
 		{% endfor %}
 					<!-- <div class='col-xs-12 col-sm-2' style='margin:10px auto; text-align:center;'>
